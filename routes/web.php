@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [TareasAppController::class, 'index']);
+Route::post('/tareasApp', [TareasAppController::class, 'store']);
+Route::get('/tareasApp/{id}/edit', [TareaAppController::class, 'edit']);
+Route::put('/tareasApp/{id}', [TareasAppController::class, 'update']);
+Route::delete('/tareasApp/{id}', [TareasAppController::class, 'destroy']);
